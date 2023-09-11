@@ -1,0 +1,40 @@
+.header {
+    display: flex;
+    height: 70px;
+    background-color: white;
+
+    &__title {
+        display: flex;
+        text-align: center;
+        height: 100%;
+        width: 15%;
+
+        &__text {
+            margin: auto;
+            color: #23272f;
+        }
+    }
+
+    &__main {
+        display: flex;
+        height: 100%;
+        width: 65%;
+    }
+
+    &__auth {
+        display: flex;
+        height: 100%;
+        width: 20%;
+        margin: auto;
+        border: none;
+        align-items: center;
+
+        &__button {
+            width: 50%;
+            margin: 0 20px 0 20px;
+            text-align: center;
+            border: 1px solid #23272f;
+            border-radius: 25px;
+        }
+    }
+}
