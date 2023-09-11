@@ -1,6 +1,5 @@
 import { Injectable } from '@nestjs/common';
 import { User } from './schemas/user.schema';
-import { Model } from 'mongoose';
 import { UserRepository } from './user.repository';
 
 @Injectable()

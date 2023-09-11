@@ -11,10 +11,11 @@ export class UserRepository {
     ) {}
 
     async create(user: User): Promise<User> {
-        return await(new User());
+        const savedUser = new this.userModel(user);
+        return await savedUser.save();
     }
 
-    async findOne(selector: User): Promise<User> {
+    async findOne(selector: any): Promise<User> {
         return await(new User());
     }
 }

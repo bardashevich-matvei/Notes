@@ -1,6 +1,4 @@
 import { Controller, Get, Req, Post, Body } from '@nestjs/common';
-import { of } from 'rxjs';
-import { Observable } from 'rxjs/internal/Observable';
 import { User } from './schemas/user.schema';
 import { UserService } from './user.service';
 
