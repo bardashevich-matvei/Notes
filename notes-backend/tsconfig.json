@@ -20,6 +20,7 @@
     "paths": {
       "@app/*": ["./src/*"],
       "@dto/*": ["../dto/*"],
+      "class-validator": ["./node_modules/class-validator"]
     },
   }
 }
