@@ -1,5 +1,5 @@
 // @ts-ignore
-import { IsString } from 'class-validator';
+import { IsString, IsOptional } from 'class-validator';
 
 export default class CreateUserRequestDto {
   @IsString()
@@ -9,5 +9,6 @@ export default class CreateUserRequestDto {
   password: string;
 
   @IsString()
+  @IsOptional()
   name?: string;
 }

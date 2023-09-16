@@ -31,6 +31,8 @@ export class UserRepository {
 	}
 
 	async update(id: string, user: UpdateUserRequestDto): Promise<UserResponseDto> {
+		const qe = await this.userModel.findById(id);
+		console.log(qe);
 		const updatedUser = await this.userModel
 			.findByIdAndUpdate(id, user, { new: true })
 			.lean()
