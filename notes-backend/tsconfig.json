@@ -19,8 +19,9 @@
     "noFallthroughCasesInSwitch": false,
     "paths": {
       "@app/*": ["./src/*"],
-      "@dto/*": ["../dto/*"],
-      "class-validator": ["./node_modules/class-validator"]
+      "@libs/*": ["../libs/*"],
+      "class-validator": ["./node_modules/class-validator"],
+	  "class-transformer": ["./node_modules/class-transformer"]
     },
   }
 }

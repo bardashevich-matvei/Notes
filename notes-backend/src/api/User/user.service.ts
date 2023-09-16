@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
-import UserResponseDto from '@dto/User/responses/user-response.dto';
-import CreateUserRequestDto from '@dto/User/requests/create-user-request.dto';
-import UpdateUserRequestDto from '@dto/User/requests/update-user-request.dto';
+import UserResponseDto from '@libs/dtos/User/responses/user-response.dto';
+import CreateUserRequestDto from '@libs/dtos/User/requests/create-user-request.dto';
+import UpdateUserRequestDto from '@libs/dtos/User/requests/update-user-request.dto';
 import { UserRepository } from './user.repository';
-import { SearchRequest } from '@dto/search/SearchRequest.dto';
+import { SearchRequest } from '@libs/search/SearchRequest';
 
 @Injectable()
 export class UserService {

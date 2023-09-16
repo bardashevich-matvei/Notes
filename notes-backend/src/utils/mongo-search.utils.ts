@@ -1,4 +1,4 @@
-import { SearchRequest } from '@dto/search/SearchRequest.dto';
+import { SearchRequest } from '@libs/search/SearchRequest';
 import { FilterQuery, QueryOptions } from 'mongoose';
 
 const requestForbidenChar = '()+[*';

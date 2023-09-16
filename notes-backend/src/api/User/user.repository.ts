@@ -2,10 +2,10 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { User } from './schemas/user.schema';
 import { Model } from 'mongoose';
-import UserResponseDto from '@dto/User/responses/user-response.dto';
-import CreateUserRequestDto from '@dto/User/requests/create-user-request.dto';
-import UpdateUserRequestDto from '@dto/User/requests/update-user-request.dto';
-import { SearchRequest } from '@dto/search/SearchRequest.dto';
+import UserResponseDto from '@libs/dtos/User/responses/user-response.dto';
+import CreateUserRequestDto from '@libs/dtos/User/requests/create-user-request.dto';
+import UpdateUserRequestDto from '@libs/dtos/User/requests/update-user-request.dto';
+import { SearchRequest } from '@libs/search/SearchRequest';
 import { mapSearchRequestForMongo } from '@app/utils/mongo-search.utils';
 
 @Injectable()
