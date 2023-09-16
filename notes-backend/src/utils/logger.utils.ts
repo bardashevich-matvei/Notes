@@ -8,6 +8,7 @@ export class AppLoggerMiddleware implements NestMiddleware {
 			headers: req.headers,
 			body: req.body,
 			originalUrl: req.url,
+			method: req.method
 		});
 
 		next();
