@@ -9,17 +9,18 @@
     "target": "ES2021",
     "sourceMap": true,
     "outDir": "./dist",
+	"rootDirs": ["src", "libs"],
     "baseUrl": "./",
     "incremental": true,
     "skipLibCheck": true,
-    "strictNullChecks": false,
+    "strictNullChecks": true,
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
-    "paths": {
+    "paths": {	
+	  "@libs/*": ["../libs/*"],
       "@app/*": ["./src/*"],
-      "@libs/*": ["../libs/*"],
       "class-validator": ["./node_modules/class-validator"],
 	  "class-transformer": ["./node_modules/class-transformer"]
     },

@@ -2,8 +2,8 @@
 import { IsOptional, ValidateNested, IsArray, IsInt, IsString, IsBoolean, IsEnum } from 'class-validator';
 // @ts-ignore
 import { Type } from 'class-transformer';
-import { StringFilter } from './StringFilter.dto';
-import { Operation } from './Operation.enum';
+import { StringFilter } from './StringFilter';
+import { Operation } from '../enums/operation.enum';
 
 export class SearchRequest {
     @IsArray()

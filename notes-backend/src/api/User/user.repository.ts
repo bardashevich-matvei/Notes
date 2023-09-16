@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { BadRequestException, Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { User } from './schemas/user.schema';
 import { Model } from 'mongoose';
@@ -31,13 +31,20 @@ export class UserRepository {
 	}
 
 	async update(id: string, user: UpdateUserRequestDto): Promise<UserResponseDto> {
-		const updatedUser = await this.userModel.findByIdAndUpdate(id, user, { new: true }).lean().exec();
+		const updatedUser = await this.userModel
+			.findByIdAndUpdate(id, user, { new: true })
+			.lean()
+			.exec();
+		
+		if (!updatedUser) {
+			throw new BadRequestException(`User not found!`);
+		}
 		return new UserResponseDto(updatedUser);
 	}
 
 	async delete(id: string): Promise<UserResponseDto> {
 		const deletedUser = await this.userModel.findByIdAndRemove(id).lean().exec();
-		return new UserResponseDto(deletedUser);
+		return new UserResponseDto(deletedUser || {});
 	}
 
 	async search(selector: SearchRequest): Promise<UserResponseDto[]> {
@@ -50,6 +57,6 @@ export class UserRepository {
 
 	async findOneById(id: string): Promise<UserResponseDto> {
 		const user = await this.userModel.findById(id).lean().exec();
-		return new UserResponseDto(user);
+		return new UserResponseDto(user || {});
 	}
 }
