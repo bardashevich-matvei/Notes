@@ -4,16 +4,11 @@ import { UserModule } from './api/User/user.module';
 import { AppLoggerMiddleware } from './utils/logger.utils';
 
 @Module({
-  imports: [
-    MongooseModule.forRoot('mongodb://127.0.0.1:27017/Notes'),
-    UserModule
-  ],
-  providers: [],
+	imports: [MongooseModule.forRoot('mongodb://127.0.0.1:27017/Notes'), UserModule],
+	providers: [],
 })
 export class AppModule {
-  configure(consumer: MiddlewareConsumer) {
-    consumer
-      .apply(AppLoggerMiddleware)
-      .forRoutes({ path: '*', method: RequestMethod.ALL });
-  }
+	configure(consumer: MiddlewareConsumer) {
+		consumer.apply(AppLoggerMiddleware).forRoutes({ path: '*', method: RequestMethod.ALL });
+	}
 }

@@ -7,10 +7,7 @@ import { SearchRequest } from '@dto/search/SearchRequest.dto';
 
 @Injectable()
 export class UserService {
-	constructor(
-		private readonly userRepository: UserRepository
-	) {}
-	
+	constructor(private readonly userRepository: UserRepository) { }
 
 	async create(movie: CreateUserRequestDto): Promise<UserResponseDto> {
 		return this.userRepository.create(movie);
@@ -20,10 +17,7 @@ export class UserService {
 		return this.userRepository.findAll(limit, offset);
 	}
 
-	async update(
-		id: string,
-		user: UpdateUserRequestDto,
-	): Promise<UserResponseDto> {
+	async update(id: string, user: UpdateUserRequestDto): Promise<UserResponseDto> {
 		return this.userRepository.update(id, user);
 	}
 

@@ -6,29 +6,27 @@ export type UserDocument = User & Document;
 
 @Schema()
 export class User {
-  @Prop({
-    type: String,
-    default: function genUUID() {
-      return uuidv4();
-    },
-  })
-  _id: string;
+	@Prop({
+		type: String,
+		default: function genUUID() {
+			return uuidv4();
+		},
+	})
+	_id: string;
 
-  @Prop({
-    require: false,
-  })
-  name?: string;
+	@Prop({ require: false })
+	name?: string;
 
-  @Prop({
-    unique: true,
-    require: true,
-  })
-  login: string;
+	@Prop({
+		unique: true,
+		require: true,
+	})
+	login: string;
 
-  @Prop({
-    require: true,
-  })
-  password: string;
+	@Prop({
+		require: true,
+	})
+	password: string;
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);
